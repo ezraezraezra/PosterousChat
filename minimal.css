@@ -1,0 +1,430 @@
+/*
+Name: MINIMAL
+Design Studio: Obox Design http://www.obox-design.com/
+Version: 1.0
+Author: Obox Design
+Author URI: http://www.obox-design.com/
+
+Modification by: TokBox
+*/
+
+
+/*--------------------------------------------------------------------------------------------------------------------------*/
+/*- RESET - Courtesy of Eric Meyer's CSS Reset Awesomeness: http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/ ---*/
+/*--------------------------------------------------------------------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td{
+margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {outline: 0;}
+body {line-height: 1; color: black; background: white;}
+ol, ul {list-style: none;}
+/* tables still need 'cellspacing="0"' in the markup */
+table {border-collapse: separate;border-spacing: 0;}
+caption, th, td {text-align: left;font-weight: normal;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: "";}
+blockquote, q {quotes: "" "";}
+
+/*-------------------------------------------------------------------------------------------*/
+/*- SETUP STD CLASSES -----------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+body{background: #efefef; font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #595959; line-height: 1.8em;}
+
+h1{font-size: 25px; margin: 0px 0px 20px; font-weight: lighter; line-height: 30px;}
+h2{font-size: 20px; margin: 0px 0px 10px; font-weight: lighter; line-height: 24px;}
+h3{font-size: 17px; margin: 0px 0px 10px; font-weight: bold; line-height: 24px;}
+h4{margin: 0px; padding: 8px 0px 10px 0px; font-weight: lighter;}
+h5{margin: 0px; padding: 8px 0px 10px 0px; font-weight: lighter;}
+h6{margin: 0px; padding: 8px 0px 10px 0px; font-weight: lighter;}
+
+h1, h2, h3, h4, h5, h6{color: #333; font-weight: lighter;}
+
+p{font-size: 12px; margin: 10px 0;}
+blockquote, blockquote p{font-weight: lighter; font-size: 18px; line-height: 30px;}
+
+form{}
+label{}
+textarea, input{font-size: 12pt; font-family: Arial, Helvetica, sans-serif;}
+input[type=radio]{}
+input[type=checkbox]{}
+input[type=image]{}
+input[type=button]{padding: 8px;}
+
+
+/*-------------------------------------------------------------------------------------------*/
+/*- GLOBAL CLASSES --------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+/*--- Links ---*/
+a{color: #09c; text-decoration: none;}
+	a:hover{ color: #000;}
+	a:active{text-decoration: underline;}
+	
+/*--- Layouts ---*/
+.no_bg{background-image: none;}
+.clearboth{clear: both}
+.floatleft{float: left;}
+.floatright{float: right;}
+.floatright{float:right;}
+.no_display{display: none;}
+
+.alignleft{float: left; margin: 0px 20px 10px 0px;}
+.alignright{float: right; margin: 0px 0px 10px 20px;}
+.aligncenter{text-align: center;}
+
+u{text-decoration: underline;}
+strong{font-weight: bold;}
+em{font-style: italic;}
+
+
+/*-------------------------------------------------------------------------------------------*/
+/*- GENERAL LAYOUT --------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+#container{width: 900px; margin: auto; padding: 30px 0px 60px; position: relative; }
+
+	#left-column{position: relative; margin-left: auto; margin-right: auto; width: 580px;}
+/*	
+	#right-column{float: right; width: 258px; background: #fff; border: 1px solid #fff;
+					-moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.20);
+					-webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.20);}
+*/
+					
+
+/*-------------------------------------------------------------------------------------------*/
+/*- HEADER ----------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+	#header{clear: both; margin-bottom: 20px; text-shadow: 0px 1px 0pt rgba(255, 255, 255, 0.40);}
+		h1.logo{margin: 0px 0px 5px 0; padding: 0px; font-weight: bold; font-size: 30px;}
+		h1.header_image { margin-left: 0;}
+			h1.logo a{color: #333;}
+			h1.logo a:hover{color: #000;}
+		p.intro-text{margin: 0px 0px 5px 10px; padding: 0px; color: #595959; font-style: italic; font-family: Georgia, "Times New Roman", Times, serif;}
+		
+		
+	/*-------------------------*/
+	/*- PAGES -----------------*/
+	.pages{list-style: none; margin-top: 20px; }
+		.pages li{float: left; margin-right: 10px; list-style: none !important;}
+		.pages li a{display: inline-block; padding: 1px 10px;  color: #333; font-weight: bold; font-size: 14px;
+						 text-shadow: none;
+						-webkit-border-radius: 15px;
+						-moz-border-radius: 15px;}
+			.pages li a:hover{background: #09c; color: #fff; text-shadow: 0px 1px 0pt rgba(0, 0, 0, 0.30);}
+			.pages li a.current{background: #09c; color: #fff; text-shadow: 0px 1px 0pt rgba(0, 0, 0, 0.30);}
+
+
+/*-------------------------------------------------------------------------------------------*/
+/*- LEFT COLUMN -----------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+.post{clear: both; background: #fff; border: 1px solid #fff; margin-bottom: 40px; position: relative;
+		-moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.20);
+		-webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.20);}
+
+
+	/*-------------------------*/
+	/*- DATE BUBBLE -----------*/
+	.date-bubble{display: block; width: 50px; height: 50px; background: url(http://posterous.com/themes/minimal/images/layout/bubble.png) no-repeat; position: absolute; right: -10px; top: -24px;}
+	.date-bubble span{display: block; line-height: 14px; text-align: center; text-transform: uppercase; color: #fff; font-size: 10px; text-shadow: 0px 1px 0pt rgba(0, 0, 0, 0.30);}
+	.date-bubble span.month{padding-top: 12px;}
+
+
+	/*-------------------------*/
+	/*- POST CONTAINER --------*/
+	.post-content{padding: 35px 39px 39px; border-top: 4px solid #09c;}
+		h2.post-title{padding: 0px 0px 20px; margin: 0px 0px 20px; border-bottom: 2px solid #ccc; color: #333; font-weight: bold; font-size: 25px;}
+			h2.post-title a{color: #333;}
+				h2.post-title a:hover{color: #09c;}
+
+		
+	/*-------------------------*/
+	/*- EDIT BOX --------------*/
+	.editbox{width: 500px; position: absolute; top: 5px;}
+	ul.mini_commands{ position: relative; float: left; padding: 5px 0px; margin: 0px; font-size: 10px; text-align: left; text-transform: uppercase; line-height: 20px; list-style: none;}
+		ul.mini_commands li{color: #999; padding: 0px 0px; float: left; margin-right: 20px;}
+			ul.mini_commands li a{color: #999;}
+				ul.mini_commands li a:hover{color: #000;}
+
+	.post-content ul.mini_commands { visibility: none; }
+	.post-content:hover ul.mini_commands{visibility: visible;}
+
+
+	/*-------------------------*/
+	/*- DOWNLOAD LINK ---------*/
+	.downloadlink{display: inline-block; padding: 0 10px 5px; margin: 0 auto 0px;}
+		.downloadlink:hover{}
+
+
+	/*-------------------------*/
+	/*- META DATA -------------*/
+	ul.post-meta-data{clear: both; padding: 20px 40px 15px; margin: 0px; background: #F4F4F4; border-top: 1px solid #ccc; text-transform: none; line-height: 20px; font-size: 10px;}
+		ul.post-meta-data li{padding: 0px 0px; float: left; margin-right: 20px; list-style: none !important;}
+			ul.post-meta-data li a{color: #555;}
+				ul.post-meta-data li a:hover{color: #000;}
+			ul.post-meta-data li.tags{clear: both; width: 500px; margin-bottom: 10px;}
+				ul.post-meta-data li.tags a{margin-right: 4px; padding: 3px 6px; background: #333; color: #ccc;
+											-webkit-border-radius: 15px;
+											-moz-border-radius: 15px;}
+					ul.post-meta-data li.tags a:hover{background: #09c; color: #fff; text-shadow: 0px 1px 0pt rgba(0, 0, 0, 0.30);}
+				
+		ul.post-meta-data li.admin-button{float: right;}
+		
+		/*- RETWEET -*/
+		ul.post-meta-data li.retweet-button{margin: 0px 20px 0px 0px !important; padding: 0px !important;}
+		ul.post-meta-data li.retweet-button .posterous_retweet_widget{margin: 0px !important;}
+			ul.post-meta-data .posterous_retweet_widget a.posterous_retweet{color: #333;
+																								-webkit-border-radius: 15px; -moz-border-radius: 15px;}
+				ul.post-meta-data .posterous_retweet_widget a.posterous_retweet:hover{color: #333; background-color: #54BFE7;}
+		.posterous_retweet_widget{margin: 0px !important; padding: 0px !important;}
+
+	/*-------------------------*/
+	/*- NEXT PREVIOUS BUTTONS -*/
+	.next-prev{width: 580px; margin: 20px auto 20px;}
+		.next-prev a{display: inline-block; padding: 2px 10px;  background: #333; color: #ccc; font-weight: bold;
+						-webkit-border-radius: 15px;
+						-moz-border-radius: 15px;}
+			a.next-page{float: right;}
+			a.prev-page{float: left;}
+			.next-prev a:hover{background: #09c; color: #fff; text-shadow: 0px 1px 0pt rgba(0, 0, 0, 0.30);}
+
+
+/*-------------------------------------------------------------------------------------------*/
+/*- POSTS CLASSES ---------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+/*- RESET SOME CLASSES FOR THE COPY AFTER CLEARING EVERYTHING AT THE TOP OF THE CSS  -*/
+.post .copy p{clear: none;}
+.post .copy ol, .post .copy ul{list-style: disc; margin: 0px 0px 10px 30px;}
+	.post .copy ol li, .post .copy ul li{line-height: 22px; padding-bottom: 10px;}
+.post .copy ol{list-style: decimal;}
+.post .copy code, .post .copy pre{}
+.post .copy img{}
+.post .copy h2{line-height: 35px; margin-top: 20px;}
+.post .copy h3{margin-top: 20px; border-bottom: 1px dotted #ccc; padding: 0px 0px 5px; margin-bottom: 0px 0px 5px;}
+.post .copy h4{font-weight: bold;}
+.post .copy blockquote{border-left: 3px solid #e0e0e0; margin: 15px 0px; padding: 0px 20px 0px; font-style: italic; font-size: 13px;}
+
+
+.copy {text-align: center;}
+
+
+/*-------------------------------------------------------------------------------------------*/
+/*- HOME PAGE COMMENTS ----------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+.posterous_comments{ margin: 0px 0px 0px;}
+.comment_loading_div{}
+.posterous_comments .commentunit{clear: both; padding: 20px 0px 0px; margin: 0px auto 0px !important; background: none !important; line-height: 20px;}
+	 .posterous_comments .commentunit:first-child{border-top: none; padding-top: 0px;}
+	.posterous_comments .commentunit .comment_spacer{display: none !important;}
+
+	.posterous_comments .commentunit .profile_border{display: none !important;}
+	.posterous_comments .comment_hide_button{float: right; display: block; padding-top: 4px;}
+	.posterous_comments .commentunit .comment{width: 500px !important;}
+	
+	
+		.posterousAddNewComment form .commentunit{padding: 0px !important; margin: 0px !important;}
+		.posterousAddNewComment form .comment_label{padding: 10px 0px 4px !important; margin: 0px !important; height: auto;}
+		.posterousAddNewComment form input[type=text]{width:  460px !important;}
+		.posterousAddNewComment form input[type=submit]{margin-top: 10px !important;}
+		.posterousAddNewComment form textarea{width: 460px !important;}
+
+
+/*-------------------------------------------------------------------------------------------*/
+/*- COMMENTS CLASSES ------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+
+.comments-container{clear: both; padding: 39px; background: #fff; border: 1px solid #fff; margin-bottom: 40px; position: relative;
+		-moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.20);
+		-webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.20);}
+
+	.comments-index-container{padding: 0px 39px 0px 39px; margin: 0px; border: none; -moz-box-shadow: none; -webkit-box-shadow: none;}
+
+	.comment_list:hover ul.mini_commands{visibility: visible;}
+
+	.comments-container h4{padding: 0px 0px 10px; margin: 0px 0px 0px; border-bottom: 2px solid #ccc; color: #333; font-weight: bold; font-size: 20px;}
+	.comments-container h4.comment-title{padding: 0px 0px 10px !important; height: 20px;}
+
+	.comments-container h4.comment-title span{float: left; display: block;}
+	.comments-container h4.comment-title a{float: right; display: block; cursor: pointer; padding: 0px 6px; background: #333; color: #ccc; text-transform: none; line-height: 20px; font-size: 10px;
+											-webkit-border-radius: 15px;
+											-moz-border-radius: 15px;}
+		.comments-container h4.comment-title a:hover{background: #09c; color: #fff; text-shadow: 0px 1px 0pt rgba(0, 0, 0, 0.30);}
+
+		.commentunit{clear: both; padding-top: 20px; margin: 0px !important; border-top: 1px dotted #ccc;}
+			.comments-container .commentunit:first-child{border-top: none;}
+			
+			.commentunit .comment_label{}
+				.commentunit .comment_label .comment_date{margin: 0px 0px 5px; padding: 0px; font-size: 10px; color: #777; text-align: left;}
+				.commentunit .comment_label .comment_avatar{float: right; display: block; width: 35px; padding: 5px; margin: 10px auto 0px;}
+				.commentunit .comment_label .comment_avatar img{border: none; display: block;}
+	
+			.commentunit .comment{float: left; width: 450px; padding: 0px; margin-bottom: 15px; text-align: left !important; line-height: 22px;}
+				.commentname{clear: both; font-size: 13px !important; font-weight: bold; padding: 0px; margin: 0px;}
+				.commentunit .comment p{clear: both; margin: 0px; margin: 12px 0px 0px; color: #555;}
+			
+			.commentunit .mini_commands{clear: both; float: none; padding: 10px 0px; margin: 5px auto 0px; font-size: 10px; text-align: right; text-transform: uppercase; line-height: 20px;}
+				.commentunit .mini_commands li{color: #999; padding: 0px 0px; float: left; margin-right: 20px;}
+					.commentunit .mini_commands li a{color: #999;}
+						.commentunit .mini_commands li a:hover{color: #000;}
+	
+	
+		/*-------------------------------------------------------------------------------------------*/
+		/*- LEAVE A COMMENT -------------------------------------------------------------------------*/
+		/*-------------------------------------------------------------------------------------------*/
+		.leave-a-comment{clear: both; line-height: 20px; }
+			
+			.leave-a-comment .commentunit{border: none; margin: 0px !important; overflow: inherit;}
+			form .commentunit{ border: none !important;}
+			.leave-a-comment .comment_spacer{display: none;}
+			
+			.leave-a-comment .comment_label{float: none; width: 250px !important; padding: 0px 0px 5px;}
+			.leave-a-comment .comment_value{clear: both; margin: 0px;}
+			
+				.comment_value input{width: 350px; padding: 5px !important; background: #fff !important; border: 1px solid #9FC4D5 !important;
+									-webkit-border-radius: 4px;
+									-moz-border-radius: 4px;}
+				.comment_value textarea{width: 400px; height: 100px; padding: 5px !important; margin-bottom: 10px !important; background: #fff !important; border: 1px solid #9FC4D5 !important;
+										-webkit-border-radius: 4px;
+										-moz-border-radius: 4px;}
+						
+				.comment_value input{}
+				.comment_value input[type=checkbox]{width: auto !important;}
+				.comment_value input[type=submit]{clear: both; display: inline-block; width: auto !important; padding: 2px 10px;  background: #333 !important; border: none !important; color: #ccc; font-weight: bold; font-size: 12px; cursor: pointer;
+													-webkit-border-radius: 15px;
+													-moz-border-radius: 15px;}
+						.comment_value input[type=submit]:hover{background: #09c !important; color: #fff; text-shadow: 0px 1px 0pt rgba(0, 0, 0, 0.30);}
+				.post-to-facebook{display: block; padding: 5px 5px 5px 0px; margin: 10px 0px; color: #ccc; font-size: 12px; font-style: italic;}
+				.submit-comment{padding: 2px 5px; clear: both; font-size: 12px;}
+
+
+		/*-------------------------------------------------------------------------------------------*/
+		/*- LOGGED - IN LEAVE A COMMENT -------------------------------------------------------------*/
+		/*-------------------------------------------------------------------------------------------*/
+		.leave-a-comment .comment_profile_description{ float: left; margin: 3px 0px 0px 5px; font-weight: bold;}
+			.leave-a-comment .comment_profile_icon{width: 35px; margin: 0px auto 0px; padding: 5px; background: #fff;
+													-webkit-border-radius: 4px; -moz-border-radius: 4px;}
+			.leave-a-comment .comment_profile_icon img{border: none !important;}
+			.leave-a-comment .comment_profile_description a{font-weight: lighter;}
+
+
+/*-------------------------------------------------------------------------------------------*/
+/*- RIGHT COLUMN ----------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+.content{padding: 0px 0px 0px; background: #f00;}
+	#right-column h4{padding: 0px; font-weight: bold; font-size: 14px; line-height: 22px; border-bottom: 1px dotted #ccc;}
+
+	/*-------------------------*/
+	/*- AUTHOR DATA -----------*/
+	.author{padding: 25px; background: #f8f8f8; border-bottom: 1px solid #ccc;}
+	.site-author{float: left; margin: 4px 10px 4px 0px; padding: 5px; background: #f0f0f0; border: 1px solid #ccc;}
+
+	.author h4{margin: 0px 0px 5px; border: none !important;}
+	.author p{text-shadow: 0px 1px 0pt rgba(255, 255, 255, 0.30);}
+	
+
+	/*-------------------------*/
+	/*- SUBSCRIBE -------------*/
+	#right-column .subscribe_to_mysite{padding: 25px; background: #fff; border-top: 3px solid #f0f0f0; border-bottom: 1px solid #ccc;}
+	.subscribe_to_mysite div{margin-bottom: 1px;}
+	.subscribe_to_mysite a{padding: 2px 6px; background: #333; color: #ccc; font-size: 11px;
+							-webkit-border-radius: 15px;
+							-moz-border-radius: 15px;}
+	.subscribe_to_mysite a:hover{background: #09c; color: #fff; text-shadow: 0px 1px 0pt rgba(0, 0, 0, 0.30);}
+
+
+	/*---------------------*/
+	/*- CONTRIBUTORS ------*/
+	.contributors{padding: 25px; background: #fff; border-top: 3px solid #f0f0f0; border-bottom: 1px solid #ccc;}
+		.contributors h4{padding: 0px 0px 5px; margin: 0px 0px 10px;}
+	 	.contributors img{width: 30px; height: auto;}
+	
+
+	/*---------------------*/
+	
+	/*- ARCHIVE------*/
+	.archives{padding: 25px; background: #fff; border-top: 3px solid #f0f0f0; border-bottom: 1px solid #ccc;}
+		.archives h4{padding: 0px 0px 5px; margin: 0px 0px 3px;}
+	 	.archives img{width: 30px; height: auto;}
+	 	.archives div.inner {margin-left:10px;}
+	 	.archives div.archive_list {margin-top:10px;}
+	
+
+	/*---------------------*/	
+	
+	/*- LINKS -------------*/
+	.blog-links{padding: 25px; background: #fff; border-top: 3px solid #f0f0f0; border-bottom: 1px solid #ccc;}
+		.blog-links h4{padding: 0px 0px 5px; margin: 0px 0px 10px;}
+		.blog-links ul, .blog-links li{list-style: none !important;}
+		.blog-links li{border-bottom: 1px dotted #ccc; padding: 3px 0px;}
+			.blog-links li a{font-weight: bold; display: block;}
+			.blog-links li:last-child{border-bottom: none;}
+		
+	/*---------------------*/
+	/*- GEO TAG -----------*/
+	.geolocation{padding: 25px; background: #fff; border-top: 3px solid #f0f0f0; border-bottom: 1px solid #ccc;}
+		.map{clear: both; width: 208px; height: 150px; margin-top: 10px;}
+	
+
+	/*---------------------*/
+	/*- SOCIAL ICONS ------*/
+	.social-icons{padding: 8px 0px 0px;}
+	.social-icons a{background: none; padding: 0px;}
+	
+
+	/*-------------------------*/
+	/*- SEARCH BAR ------------*/
+	.search-bar{padding: 25px; background: #fff; border-top: 3px solid #f0f0f0; border-bottom: 1px solid #ccc;}
+		.search-bar h4{padding: 0px 0px 5px; margin: 0px 0px 15px;}
+	.search-form input.search{float: left; width: 160px; padding: 5px; background: none; border: 1px solid #ccc; font-size: 12px; color: #595959;
+					-webkit-border-radius: 4px;
+					-moz-border-radius: 4px;}
+	.search-form input.search_button{float: right; width: 15px; margin: 0px; background: #09c; padding: 5px 8px 6px 8px;
+					-webkit-border-radius: 4px;
+					-moz-border-radius: 4px;}
+	
+	.search-sorter{width: 210px; margin: auto; line-height: 20px;}
+		.search-sorter li{padding: 5px; border-bottom: 1px dotted #222; display: block; color: #333; font-size: 10px; width: 190px; color: #ccc;}
+			.search-sorter li a{color: #777; text-shadow: none;}
+			.search-sorter li a:hover{color: #f33; text-shadow: none;}
+			.search-sorter li strong{ text-transform: uppercase;}
+
+
+		/*-------------------------*/
+		/*- COPYRIGHT -------------*/
+		.copyright{padding: 25px; background: #fff; border-top: 3px solid #f0f0f0; text-transform: uppercase; font-size: 10px; text-align: center;}
+		.visit-obox{color: #09c;}
+			.visit-obox:hover{color: #333;}
+
+
+/*-----------------------------------------------------------------------------------------------------------------------------------*/
+/*- CLEARFIX --- * I prefer not to touch this code, I don't recommend you do so either, it works... so don't fix whats working ;) * -*/
+/*-----------------------------------------------------------------------------------------------------------------------------------*/
+/* http://sonspring.com/journal/clearing-floats */
+html body * span.clear,
+html body * div.clear,
+html body * li.clear,
+html body * dd.clear
+{background: none; border: 0; clear: both; display: block; float: none; font-size: 0; list-style: none;	margin: 0; padding: 0; overflow: hidden; visibility: hidden; width: 0; height: 0;}
+
+/* http://www.positioniseverything.net/easyclearing.html */
+.clearfix:after{clear: both; content: '.'; display: block; visibility: hidden; height: 0;}
+.clearfix{display: inline-block;}
+* html .clearfix{height: 1%;}
+.clearfix{display: block;}
+
+
+/*-------------------------------------------------------------------------------------------*/
+/*- POSTEROUS ITEMS CUSTOMIZED --------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+.posterousPrivateBox{position: absolute; top: 10px; left: 10px; z-index: 10; font-size: 10px;}
+	.posterousPrivateBox div{clear: both; float: none; margin: 0px !important;}
+	.posterousPrivateBox div a{display: block; cursor: pointer; position: relative; z-index: 11; color:#777; text-shadow: none;}
+		.posterousPrivateBox div a:hover{color:#fff;}
+		
+
+div.posterous_bar { float: right; margin-top: 10px; }     div.posterous_header { margin-left: 150px; width: 100px; }     div.posterous_flash { margin-left: 150px; width: 500px; }
