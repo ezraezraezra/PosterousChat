@@ -16,6 +16,7 @@
     	var $info_object;
 		var $connection;
 		var $db_selected;
+		var $embbed;
 		
     	function Counter() {
     		$this->info_object = new info();
@@ -107,13 +108,19 @@
 			$this->closeApp();
 			
 			return $url_id;
+		}
+		
+		function createEmbbed() {
+			$shell_command = 'curl "http://50.18.234.160:4000/hl/embed/create?email=ezra@tokbox.com&callback=embbed"';
+			$command_results = shell_exec($shell_command);
+			
+			$results = substr($command_results, 7, strlen($command_results) - 9);
+			//echo $results;
+			
+			$obj = json_decode($results);
+			return $obj->embed_id;
 		} 
 			
     }
-
-// $counter = new Counter();
-// $counter->startApp();
-// echo $counter->randomCharacter(1);
-// $counter->closeApp();
 
 ?>

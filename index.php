@@ -1,7 +1,7 @@
 <?php
 header('Content-type: application/json; charset=utf-8');
 require "design.php";
-require "counter.php";
+//require "counter.php";
 
 /*
  * Project:     Posterous
@@ -31,11 +31,9 @@ class Server {
 	
 	
 	
-	function Server() {
-			
-		//$this->email = $this->embed_id;
+	function Server() {	
 		$this->design_object = new design();
-		$this->counter_object = new Counter();
+		//$this->counter_object = new Counter();
 		
 		/*
 		 * Step 1: Create unique site for embed video
@@ -60,7 +58,6 @@ class Server {
 		/*
 		 * Step 5: Return site address
 		 */
-		//echo "http://tb-".$this->email.".posterous.com/";
 		echo $this->user_url;
 
 	}
@@ -69,10 +66,10 @@ class Server {
 	function runCommand($command) {
 		switch($command) {
 			case "create":
-				$site_url = $this->counter_object->createURL();
+				//$site_url = $this->counter_object->createURL();
+				$site_url = time();
 				
 				$verb = 'POST';
-				//$body = '-d "site[hostname]=tb-'.$this->email.'" -d "site[name]=Video Chat, Powered by OpenTok"';
 				$body =  '-d "site[hostname]=tokbox-'.$site_url.'" -d "site[name]=Video Chat, Powered by OpenTok"';
 				$url_tail = 'sites';
 				
@@ -80,19 +77,21 @@ class Server {
 				
 				break;
 			case "add":
+				//$tb_embbed = $this->counter_object->createEmbbed();
+				$tb_embbed = $this->createEmbbed();
+				
+				
 				$verb = 'POST';
-				$body = '-d "post[body]=<iframe id=\'videoEmbed\' src=\'http://api.opentok.com/hl/embed/'.$this->embed_id.'\' width=\'350\' height=\'265\' style=\'border:none\' frameborder=\'0\'></iframe>"';
+				$body = '-d "post[body]=<iframe id=\'videoEmbed\' src=\'http://50.18.234.160:4000/embed/'.$tb_embbed.'\' width=\'830\' height=\'628\' style=\'border:none\' frameborder=\'0\'></iframe>"';
 				$url_tail = 'sites/'.$this->site_id.'/posts';
 				break;
 			case "design":
 				$verb = 'POST';
 				$body = "-d 'theme[friendly_name]=Minimal' -d 'theme[raw_theme]=".$this->design_object->design."'";
-				//$url_tail = 'sites/tb-'.$this->email.'/theme';
 				$url_tail = 'sites/'.$this->site_id.'/theme';
 				break;
 		}
 		$shell_command = 'curl -X '.$verb.' --user '.$this->user.':'.$this->pwd.' -d "api_token='.$this->api_token.'" '.$body.' '.$this->url.$url_tail;
-		//echo $shell_command;
 		$command_results = shell_exec($shell_command);
 		
 		$this->results = $command_results;
@@ -105,20 +104,15 @@ class Server {
 		$this->site_id = $json_results['id'];
 	}
 	
-	function setTheme() {
-		$verb = 'POST';
-		//$url_tail = 'sites/'.$this->site_id.'/theme';
-		$url_tail = 'sites/tb-test-26/theme';
-		$shell_command = 'curl -X POST --user andrew@tokbox.com:andrew -d "api_token=wqruIyIqmCaBbeanjxytIdiAJhzAwHfz" -d "theme[friendly_name]=Minimal" -d "theme[raw_theme]='.$design.'" '.$url_tail;
-		
-		
-		//echo $shell_command;
+	function createEmbbed() {
+		$shell_command = 'curl "http://50.18.234.160:4000/hl/embed/create?email=ezra@tokbox.com&callback=embbed"';
 		$command_results = shell_exec($shell_command);
 		
-		$this->results = $command_results;
+		$results = substr($command_results, 7, strlen($command_results) - 9);
 		
-		echo $command_results;
-	}
+		$obj = json_decode($results);
+		return $obj->embed_id;
+	} 
 	
 }
 
