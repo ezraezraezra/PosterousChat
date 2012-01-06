@@ -8,8 +8,11 @@
  * Description: Create a new site, along with a post with an embed
  *		TokBox video chat. Meant as a server-side script
  *
- * Tech:        PHP, Posterous API
- * Last Update: January 3rd, 2012
+ * Tech:        PHP, Posterous API, TokBox API
+ * Last Update: January 6th, 2012
  ***********************************************************************/
                      
- NOTE: *** PROJECT UNDER CONSTRUCTION ***
+ NOTE: *** PROJECT COMPLETED ***
+       May be viewed at: http://www.tokbox.com/opentok/plugnplay
+       Click on "Get App Now" -> "Don't have a website"
+       Enjoy!
